@@ -1,2 +1,2 @@
 /api/* http://todolist-demo.ap-southeast-2.elasticbeanstalk.com/api/:splat 200
-/    /login    302
+/ /login 302
