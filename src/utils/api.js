@@ -1,11 +1,13 @@
 import axios from 'axios'
 
+const token = sessionStorage.getItem('token')
+
 const api = axios.create({
    baseURL: `${process.env.REACT_APP_BACKEND_PROXY}/api`,
    // baseURL: `${process.env.REACT_APP_BACKEND_URL}/api`,
    headers: {
       'Content-Type': 'application/json',
-      authorization: 'Bearer ' + sessionStorage.getItem('token'),
+      authorization: `Bearer ${token}`,
    },
 })
 /**
