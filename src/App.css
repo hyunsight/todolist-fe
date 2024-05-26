@@ -7,7 +7,8 @@ body {
    border: 1px solid lightblue;
    background-color: white;
    display: flex;
-   justify-content: space-between;
+   /* justify-content: space-between; */
+   justify-content: flex-start;
    align-items: center;
 }
 .todo-content {
@@ -18,9 +19,9 @@ body {
    margin-bottom: 30px;
 }
 .input-box {
-   padding: 10px;
    width: 100%;
    border: 1px solid lightblue;
+   padding: 1em;
 }
 .input-box:focus {
    outline: none;
@@ -30,25 +31,42 @@ button {
    color: white;
 }
 .button-add {
-   height: 40px;
+   /* height: 40px; */
    width: 100%;
    border: none;
    background-color: lightblue;
    color: white;
+   padding: 1em;
 }
 .button-add:hover {
-   background-color: white;
+   /* background-color: white; */
    color: lightblue;
-   border: 2px solid lightblue;
+   /* border: 2px solid lightblue; */
+   background-color: #4298b5;
 }
 .button-delete {
-   background-color: white;
-   border: 2px solid lightblue;
-   color: lightblue;
-   margin: 10px;
+   /* background-color: white; */
+   /* border: 2px solid lightblue; */
+   border: none;
+   color: white;
+   width: 47%;
+   padding: 1em;
 }
-.button-delete:hover {
+.button-delete:first-child {
+   background-color: #fd5c63;
+   margin-right: 10px;
+}
+.button-delete:nth-child(2) {
    background-color: lightblue;
+}
+
+.button-delete:first-child:hover {
+   background-color: #ed1b2e;
+   color: #ffffff;
+}
+
+.button-delete:nth-child(2):hover {
+   background-color: #4298b5;
    color: #ffffff;
 }
 
@@ -89,4 +107,15 @@ button {
 
 .red-error {
    color: red;
+}
+
+/* 별도 추가 */
+.user-info {
+   margin-top: 20px !important;
+   display: flex;
+   justify-content: flex-end;
+}
+
+.user-info div {
+   margin-right: 10px;
 }

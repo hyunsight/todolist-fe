@@ -4,14 +4,16 @@ import api from '../utils/api'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
+import Logout from '../components/Logout'
 
-const TodoPage = () => {
+const TodoPage = ({ user, setUser }) => {
    const [todoList, setTodoList] = useState([])
    const [todoValue, setTodoValue] = useState('')
 
    const getTasks = async () => {
       const response = await api.get('/tasks')
-      console.log('rrrrrr', response)
+      // console.log('rrrrrr', response)
+      console.log('taskList', response.data.data)
       setTodoList(response.data.data)
    }
 
@@ -74,6 +76,8 @@ const TodoPage = () => {
 
    return (
       <Container>
+         <Logout user={user} setUser={setUser} />
+
          <Row className="add-item-row">
             <Col xs={12} sm={10}>
                <input
