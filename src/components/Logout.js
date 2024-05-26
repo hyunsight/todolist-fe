@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom'
 const Logout = ({ user, setUser }) => {
    const navigate = useNavigate()
 
-   const handleLogout = (event) => {
+   const handleLogout = async (event) => {
       event.preventDefault()
 
       try {
-         sessionStorage.removeItem('token')
+         await sessionStorage.removeItem('token')
          setUser(null)
          navigate('/login')
       } catch (error) {
